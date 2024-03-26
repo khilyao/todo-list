@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { removeTodo, toggleTodoComplete } from "../../store/todos/todoSlice";
+import { TodoContainer, TodoText, DeleteButton } from "./TodoItem.styled";
 
 type TodoItemProps = {
   id: string;
@@ -19,13 +20,11 @@ const TodoItem = ({ id, text, completed }: TodoItemProps) => {
   };
 
   return (
-    <li>
-      <input checked={completed} onChange={handleChecked} type="checkbox" />
-      <span>{text}</span>
-      <span className="delete" onClick={handleRemoveTodo}>
-        &times;
-      </span>
-    </li>
+    <TodoContainer>
+      <input type="checkbox" checked={completed} onChange={handleChecked} />
+      <TodoText>{text}</TodoText>
+      <DeleteButton onClick={handleRemoveTodo}>&times;</DeleteButton>
+    </TodoContainer>
   );
 };
 

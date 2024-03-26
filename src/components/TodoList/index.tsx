@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux";
 import TodoItem from "../TodoItem";
+import { ListContainer } from "./TodoList.styled";
 import { todosSelector } from "../../store/todos/todoSelectors";
 
 const TodoList = () => {
   const todos = useSelector(todosSelector);
 
   return (
-    <ul>
+    <ListContainer>
       {todos.map(({ id, text, completed }) => (
-        <TodoItem key={id} id={id} text={text} completed={completed}></TodoItem>
+        <TodoItem key={id} id={id} text={text} completed={completed} />
       ))}
-    </ul>
+    </ListContainer>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { InputContainer, Label, Input, Button } from "./InputField.styled";
 import { addTodo } from "../../store/todos/todoSlice";
 
 const InputField = () => {
@@ -12,19 +13,21 @@ const InputField = () => {
 
   return (
     <>
-      <label htmlFor="todoTask">Введите задание для выполнения</label>
-      <input
-        id="todoTask"
-        name="todoTask"
-        type="text"
-        value={todoTask}
-        onChange={(e) => {
-          setTodoTask(e.target.value);
-        }}
-      />
-      <button type="submit" onClick={handleSubmit}>
-        Add Todo
-      </button>
+      <InputContainer>
+        <Label htmlFor="todoTask">Enter task to be done</Label>
+        <Input
+          id="todoTask"
+          name="todoTask"
+          type="text"
+          value={todoTask}
+          onChange={(e) => {
+            setTodoTask(e.target.value);
+          }}
+        />
+        <Button type="submit" onClick={handleSubmit}>
+          Add Todo
+        </Button>
+      </InputContainer>
     </>
   );
 };
