@@ -5,7 +5,7 @@ type LineProps = {
   bgcolor?: string;
 };
 
-const Line = ({ size = 50, bgcolor = "white" }: LineProps) => {
+const Line = ({ size = 20, bgcolor = "white" }: LineProps) => {
   return <StyledLine $bgcolor={bgcolor} size={size}></StyledLine>;
 };
 

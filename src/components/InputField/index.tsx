@@ -8,6 +8,8 @@ import {
   StyledTopTodo,
   StyledIcon,
   StyledWrapper,
+  StyledField,
+  StyledFieldWrapper,
 } from "./InputField.styled";
 import { addTodo } from "../../store/todos/todoSlice";
 import Line from "../Line";
@@ -16,7 +18,9 @@ const InputField = () => {
   const dispatch = useDispatch();
   const [todoTask, setTodoTask] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
     if (todoTask !== "") {
       dispatch(addTodo({ text: todoTask }));
     }
@@ -71,20 +75,29 @@ const InputField = () => {
             <Line size={240} />
           </StyledWrapper>
         </StyledTopTodo>
-        <div>
-          <Input
-            id="todoTask"
-            name="todoTask"
-            type="text"
-            value={todoTask}
-            onChange={(e) => {
-              setTodoTask(e.target.value);
-            }}
-          />
-          <Button type="submit" onClick={handleSubmit}>
-            Add Todo
-          </Button>
-        </div>
+        <StyledFieldWrapper>
+          <form>
+            <StyledField>
+              <Input
+                id="todoTask"
+                name="todoTask"
+                type="text"
+                value={todoTask}
+                onChange={(e) => {
+                  setTodoTask(e.target.value);
+                }}
+              />
+              <Button
+                type="submit"
+                onClick={(e) => {
+                  handleSubmit(e);
+                }}
+              >
+                Add task
+              </Button>
+            </StyledField>
+          </form>
+        </StyledFieldWrapper>
       </InputContainer>
     </>
   );

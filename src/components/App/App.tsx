@@ -1,3 +1,4 @@
+import "reset-css";
 import TodoList from "../TodoList";
 import InputField from "../InputField";
 import { AppContainer } from "./App.styled";
