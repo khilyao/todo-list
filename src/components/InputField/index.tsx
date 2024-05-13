@@ -10,6 +10,7 @@ import {
   StyledWrapper,
   StyledField,
   StyledFieldWrapper,
+  StyledForm,
 } from "./InputField.styled";
 import { addTodo } from "../../store/todos/todoSlice";
 import Line from "../Line";
@@ -46,37 +47,35 @@ const InputField = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <desc>Created with Pixso.</desc>
-              <defs />
               <path
                 d="M11.51 19.42L11.51 15.42L23.51 3.42L27.51 7.42L15.51 19.42L11.51 19.42Z"
                 stroke="#FFFFFF"
-                stroke-opacity="1.000000"
-                stroke-width="2.000000"
-                stroke-linejoin="round"
+                strokeOpacity="1.000000"
+                strokeWidth="2.000000"
+                strokeLinejoin="round"
               />
               <path
                 d="M20.51 6.42L24.51 "
                 stroke="#FFFFFF"
-                stroke-opacity="1.000000"
-                stroke-width="2.000000"
-                stroke-linejoin="round"
-                stroke-linecap="round"
+                strokeOpacity="1.000000"
+                strokeWidth="2.000000"
+                strokeLinejoin="round"
+                strokeLinecap="round"
               />
               <path
                 d="M26.51 14.42L26.51 25.42C26.51 25.69 26.4 25.94 26.22 26.13C26.03 26.32 25.77 26.42 25.51 26.42L5.51 26.42C5.24 26.42 4.99 26.32 4.8 26.13C4.61 25.94 4.51 25.69 4.51 25.42L4.51 5.42C4.51 5.16 4.61 4.9 4.8 4.71C4.99 4.53 5.24 4.42 5.51 4.42L16.51 "
                 stroke="#FFFFFF"
-                stroke-opacity="1.000000"
-                stroke-width="2.000000"
-                stroke-linejoin="round"
-                stroke-linecap="round"
+                strokeOpacity="1.000000"
+                strokeWidth="2.000000"
+                strokeLinejoin="round"
+                strokeLinecap="round"
               />
             </StyledIcon>
             <Line size={240} />
           </StyledWrapper>
         </StyledTopTodo>
         <StyledFieldWrapper>
-          <form>
+          <StyledForm>
             <StyledField>
               <Input
                 id="todoTask"
@@ -96,7 +95,7 @@ const InputField = () => {
                 Add task
               </Button>
             </StyledField>
-          </form>
+          </StyledForm>
         </StyledFieldWrapper>
       </InputContainer>
     </>

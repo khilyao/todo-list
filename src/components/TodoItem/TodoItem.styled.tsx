@@ -1,23 +1,40 @@
 import styled from "styled-components";
 
 export const TodoContainer = styled.li`
-  /* display: flex;
+  display: flex;
   align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
 
-  &:last-child {
-    border-bottom: none;
-  } */
+  color: #fff;
+  background-color: #202020;
+
+  border-radius: 10px;
 `;
 
 export const TodoText = styled.span`
-  flex: 1;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+
+  height: 40px;
+  padding: 10px;
+
+  font-size: 19px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.21;
 `;
 
-export const DeleteButton = styled.span`
-  /* font-size: 18px;
+export const TrashBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px;
+  margin: 0;
+
+  color: #ff0000;
+  background: rgb(153, 153, 153);
+  border-radius: 10px;
+  border: none;
+
   cursor: pointer;
-  color: #ff0000; */
 `;

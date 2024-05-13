@@ -11,11 +11,7 @@ interface TodoState {
 }
 
 const initialState: TodoState = {
-  todos: [
-    { id: "2", text: "test 1", completed: false },
-    { id: "1", text: "test 2", completed: false },
-    { id: "3", text: "test 3", completed: false },
-  ],
+  todos: [{ id: "1", text: "Create the first task!", completed: false }],
 };
 
 const todoSlice = createSlice({
@@ -23,8 +19,6 @@ const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo(state, action: PayloadAction<{ text: string }>) {
-      console.log(action);
-
       state.todos.push({
         id: new Date().toISOString(),
         text: action.payload.text,

@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.div`
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  margin-bottom: 20px; */
+  align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const StyledTopTodo = styled.div`
@@ -11,7 +12,11 @@ export const StyledTopTodo = styled.div`
   align-items: center;
   flex-direction: column;
 
-  margin-bottom: 80px;
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 80px;
+  }
 `;
 
 export const StyledWrapper = styled.div`
@@ -29,13 +34,21 @@ export const StyledWrapper = styled.div`
 export const Label = styled.label`
   padding: 0 20px;
 
-  font-size: 8vw;
+  font-size: 11vw;
   font-family: "Racing Sans One";
 
   color: #fff;
   text-transform: uppercase;
 
-  @media screen and (min-width: 400px) {
+  @media screen and (min-width: 460px) {
+    font-size: 10vw;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 8vw;
+  }
+
+  @media screen and (min-width: 1200px) {
     font-size: 6vw;
   }
 `;
@@ -47,21 +60,30 @@ export const StyledIcon = styled.svg`
 export const StyledFieldWrapper = styled.div`
   display: flex;
   justify-content: center;
+  width: 300px;
+
+  @media screen and (min-width: 768px) {
+    width: 80%;
+  }
+`;
+
+export const StyledForm = styled.form`
+  width: 100%;
 `;
 
 export const StyledField = styled.div`
   position: relative;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 
   height: 50px;
-  width: 80%;
 `;
 
 export const Input = styled.input`
   height: 100%;
+  flex-grow: 1;
   padding: 0px 70px 0px 15px;
 
   font-size: 20px;
@@ -76,7 +98,7 @@ export const Input = styled.input`
 export const Button = styled.button`
   position: absolute;
   top: 0;
-  left: 60%;
+  right: -5px;
 
   height: 100%;
   min-width: 140px;
